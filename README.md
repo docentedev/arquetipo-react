@@ -4,7 +4,7 @@
 - basada en un diseño modular
 - basada en componentes
 
-## Acuerdos
+## Acuerdos
 - no deben existir dependencias a librerias externas en el codigo, utilizar `wrappers` para esto
 - textos deben estar parametrizados
 - rutas deben estar parametrizadas
