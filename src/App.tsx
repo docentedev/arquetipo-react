@@ -1,24 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 
+import routes from './config/routes';
+
+import Home from './containers/home/Home';
+
+/**
+ * @author Claudio Rojas <claudio.dcv@gmail.com>
+ * @since v1.0.0
+ * @version v1.0.0
+ * @param props
+ */
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Router>
+        <Route path={routes.home} component={Home} />
+      </Router>
     </div>
   );
 }
