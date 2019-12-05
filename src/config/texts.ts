@@ -1,5 +1,5 @@
-const texts = {
-    name: 'Nombre',
+enum Texts {
+    name = 'Nombre',
 };
 
-export default texts;
+export default Texts;

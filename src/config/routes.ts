@@ -1,5 +1,5 @@
-const routes = {
-    home: '/',
+enum Routes {
+    home = '/',
 };
 
-export default routes;
+export default Routes;
