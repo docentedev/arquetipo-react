@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card is ok renderer 1`] = `
+<div
+  className="card"
+>
+  <strong>
+    #
+    1
+    <br />
+    Nombre
+    : 
+    Juan
+  </strong>
+  <p>
+    juan@mail.com
+     | 
+    123454325
+  </p>
+</div>
+`;

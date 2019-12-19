@@ -21,3 +21,8 @@
  */
 ```
 - preferir utilizacion de `type` en los `props` de componentes sobre `prop-types`
+
+
+En caso de no tener configurada la version de python2.7
+/usr/bin 
+// npm config set python "/usr/bin/python2.7"

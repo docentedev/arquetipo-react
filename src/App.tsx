@@ -1,5 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import {  useManagerInit, useStateManager } from 'use-state-manager';
+
+import { textManager, yearManager} from './store/managers';
+
 import './App.css';
 
 import routes from './config/routes';
@@ -13,8 +17,16 @@ import Home from './containers/home/Home';
  * @param props
  */
 const App: React.FC = () => {
+  
+  useManagerInit(textManager);
+  useManagerInit(yearManager);
+
+  const [year, setYear] = useStateManager(yearManager);
+
   return (
     <div className="app">
+      {year}
+      <input value={year} onChange={({ target }) => setYear(target.value)} />
       <Router>
         <Route path={routes.home} component={Home} />
       </Router>

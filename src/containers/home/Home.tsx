@@ -1,6 +1,9 @@
 import React, { useState, useEffect, Dispatch, SetStateAction } from 'react';
+import { useStateManager } from 'use-state-manager';
 
 import './Home.css';
+
+import { yearManager } from '../../store/managers';
 
 import { findAllUsersData } from './Home.utils';
 import User from '../../types/user';
@@ -20,6 +23,8 @@ const renderUser = (user : User) => (<Card key={user.id} user={user} />);
 const Home: React.FC = () => {
 
   const [users, setUsers] : [Array<User>, Dispatch<SetStateAction<any>>] = useState([]);
+  
+  const [year, setYear] = useStateManager(yearManager);
 
   useEffect(() => {
     findAllUsersData().then(setUsers);
@@ -27,6 +32,8 @@ const Home: React.FC = () => {
 
   return (
     <div className="home">
+      {year}
+      <button onClick={() => setYear(12)}>Cambiar año</button>
       <DateDisplay />
       <CardRow>{users.map(renderUser)}</CardRow>
     </div>

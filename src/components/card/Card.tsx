@@ -6,6 +6,9 @@ import User from '../../types/user';
 import texts from '../../config/texts';
 
 /**
+ * Card
+ * este comp...
+ * 
  * @author Claudio Rojas <claudio.dcv@gmail.com>
  * @since v0.1.0
  * @version v1.0.0

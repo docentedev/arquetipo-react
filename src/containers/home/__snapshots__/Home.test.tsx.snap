@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home is ok renderer 1`] = `
+<div
+  className="home"
+>
+  1990
+  <button
+    onClick={[Function]}
+  >
+    Cambiar año
+  </button>
+  <div
+    className="date-display"
+  >
+    12/19/2019
+  </div>
+  <div
+    className="card-row"
+  />
+</div>
+`;
