@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Dispatch, SetStateAction } from 'react';
-import { useStateManager } from 'use-state-manager';
+import { Link } from 'react-router-dom';
 
+import { useStateManager } from '../../store/managers/manager';
 import './Home.css';
 
 import { yearManager } from '../../store/managers';
@@ -27,11 +28,21 @@ const Home: React.FC = () => {
   const [year, setYear] = useStateManager(yearManager);
 
   useEffect(() => {
-    findAllUsersData().then(setUsers);
+    // https://juliangaramendy.dev/use-promise-subscription/
+    let isSubscribed = true
+    findAllUsersData().then((data) => {
+      if (isSubscribed) {
+        setUsers(data);
+      }
+    });
+    return () => {
+      isSubscribed = false;
+    };
   }, []);
 
   return (
     <div className="home">
+      <Link to="/login">login</Link>
       {year}
       <button onClick={() => setYear(12)}>Cambiar año</button>
       <DateDisplay />

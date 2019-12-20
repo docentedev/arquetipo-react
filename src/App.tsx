@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import {  useManagerInit, useStateManager } from 'use-state-manager';
+import {  useManagerInit, useStateManager } from './store/managers/manager';
 
 import { textManager, yearManager} from './store/managers';
 
@@ -9,6 +9,7 @@ import './App.css';
 import routes from './config/routes';
 
 import Home from './containers/home/Home';
+import Login from './containers/login/Login';
 
 /**
  * @author Claudio Rojas <claudio.dcv@gmail.com>
@@ -28,7 +29,8 @@ const App: React.FC = () => {
       {year}
       <input value={year} onChange={({ target }) => setYear(target.value)} />
       <Router>
-        <Route path={routes.home} component={Home} />
+        <Route exact path={routes.home} component={Home} />
+        <Route path={routes.login} component={Login} />
       </Router>
     </div>
   );

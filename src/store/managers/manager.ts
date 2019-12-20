@@ -1,0 +1,1 @@
+export { useManagerInit, useStateManager, createManager } from 'use-state-manager';

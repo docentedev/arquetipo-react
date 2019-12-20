@@ -1,4 +1,4 @@
-import { createManager } from 'use-state-manager';
+import { createManager } from './manager';
 
 export const yearManager = createManager(1990, 'yearManager', false);
 export const textManager = createManager('hola mundo', 'textManager', false);
